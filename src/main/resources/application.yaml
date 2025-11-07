@@ -1,0 +1,24 @@
+spring:
+    application:
+        name: FilRouge
+
+    datasource:
+        url: jdbc:h2:mem:filrouge
+        driver-class-name: org.h2.Driver
+        username: admin
+        password: password
+
+    h2:
+        console:
+            enabled: true
+
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: create-drop  # supprime et recrée la DB à chaque redémarrage
+        show-sql: true
+        defer-datasource-initialization: true
+
+    sql:
+        init:
+            mode: always  # Add this to load data.sql
